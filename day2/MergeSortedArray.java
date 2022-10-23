@@ -5,7 +5,7 @@ import java.util.Arrays;
 import org.junit.Assert;
 import org.junit.Test;
 
-public class IntersectionArrays {
+public class MergeSortedArray {
 	/*
 	 * 1) Did I understand the problem? Yes 
 	 * 		-> If yes, go to next step !!
@@ -51,37 +51,27 @@ public class IntersectionArrays {
 
 	@Test
 	public void testCase1() {
-		int[] nums1 = {1,2,2,1};
-		int[] nums2 = {2,2};
-		Assert.assertArrayEquals(arrIntersection(nums1,nums2), new int[] {2});
+		int[] nums1 = {1,2,3,0,0,0};
+		//int m=3,n=3;
+		int[] nums2 = {2,5,6};
+		Assert.assertArrayEquals(mergeSortedArray(nums1,nums2), new int[] {1,2,2,3,5,6});
 	}
 
-	@Test
-	public void testCase2() {
-		int[] nums1 = {4,9,5};
-		int[] nums2 = {9,4,9,8,4};
-		Assert.assertArrayEquals(arrIntersection(nums1,nums2), new int[] {4,9});
-	}
 
-	private int[] arrIntersection(int[] nums1, int[] nums2) {
-		Arrays.sort(nums1);
-		Arrays.sort(nums2);
-		int[] interSection = new int[Math.min(nums1.length, nums2.length)];
-		int left = 0, right = 0, counter = 0;
-		while(right < nums2.length && left < nums1.length) {
 
-			if(nums1[left] < nums2[right]) {
-				left++;
-			}else if(nums1[left] == nums2[right]) {
-				interSection[counter++] = nums1[left++];
-				right++;
+	private int[] mergeSortedArray(int[] nums1, int[] nums2) {
+		int[] op = new int[nums1.length];
+		int start =0;
+		for (int i = 0; i < nums1.length+nums2.length; i++) {
+			if(i<nums1.length){
+				op[start++]=nums1[i];
+
 			}
-			else right++;
-
+			if(i<nums2.length){
+				op[start++]=nums2[i];
+						}
 		}
-		int[] newArray = Arrays.copyOf(interSection, counter);
-		System.out.println(Arrays.toString(newArray));
-		return newArray;
 
+		return op;
 	}
 }
