@@ -1,9 +1,8 @@
-package day3;
+package day4;
 
-import org.junit.Assert;
 import org.junit.Test;
 
-public class ReturnSumofK {
+public class Palindrome {
 	/*
 	 * 1) Did I understand the problem? Yes -> If yes, go to next step !!
 	 * 
@@ -45,55 +44,59 @@ public class ReturnSumofK {
 
 	@Test
 	public void testCase1() {
-		int[] input = { 1, 5, 2, 3, 7, 1 };
-		int k = 3;
-		Assert.assertEquals(returnSumofK(input, k), 12);
+		String s="Radar";
+		String reversePalindrome = reversePalindrome(s);
+		System.out.println(reversePalindrome);
+		
 	}
-
-	@Test
-	public void testCase2() {
-		int[] input = { 1, 1, 1, 1 };
-		int k = 3;
-		Assert.assertEquals(returnSumofK(input, k), 3);
-	}
-
-	@Test
-	public void testCase3() {
-		int[] input = {};
-		int k = 3;
-		Assert.assertEquals(returnSumofK(input, k), 0);
-	}
-
-	/*
-	 * 
-	 * use 2 for loops by iterating compare the added elem with target if matches
-	 * return its index else throw an exception or -1,-1 or the nums of array is
-	 * less than 2 return empty array
-	 * 
-	 */
-//BruteForce
-	private int returnSumofK(int[] nums, int k) {
 	
-		for (int i = 0; i < nums.length; i++) {
-			for (int j = i+1; j < nums.length; j++) {
-				for (int k1 = j+1; k1 < nums.length; k1++) {
-					
-					int max=nums[i]+nums[j]+nums[k1];
-					System.out.println(max);
-				}
-				}
-				
-			}
-		
-		return k;
-		
-	}
-
-	/*
-	 * // 2 pointers o[n^2] private int returnSumofK(int[] nums, int k) { int maxSum
-	 * = Integer.MIN_VALUE; int currentSum = 0; for(int i=0; i<k; i++) { currentSum
-	 * +=nums[i]; } maxSum = Math.max(maxSum, currentSum); for (int i = 1; i <
-	 * nums.length-k; i++) { currentSum +=nums[i+k-1]-nums[i-1]; maxSum =
-	 * Math.max(maxSum, currentSum); } return maxSum; }
+	/*Given a string s and a number k, find the maximum number of vowels in substring of size k.
+	String s: "workaattech"
+	k: 3
+	/*pseudocode:
+	 * 
+	 * 
 	 */
-}
+//2 pointers
+	
+	public String reversePalindrome(String s) {
+		
+			char[] ch = s.toCharArray();  			
+			int left = 0, right = ch.length-1;
+			while (left < right) { // O(n/2)
+				// swap
+				char temp = ch[right];
+				ch[right--] = ch[left];
+				ch[left++] = temp;
+			}
+			if(s.equalsIgnoreCase(new String(ch))){
+				System.out.println("The Given String is not Palindrome");
+			}
+				else {
+				System.out.println("The Given String is not Palindrome");
+			}
+				return new String(ch);
+		}
+	}
+	
+	
+	
+	
+	// BruteForce o[n]
+/*	public String reversePalindrome(String s) {
+		char[] ch = s.toCharArray();
+		 String reverseInput = "";
+		for(int i=ch.length-1;i>=0;i--) {
+			  reverseInput = reverseInput +ch[i];
+		}
+		if(s.equalsIgnoreCase(reverseInput)) {
+			System.out.println("The Given String is Palindrome");
+		}else {
+			System.out.println("The Given String is not Palindrome");
+		}
+			return reverseInput;
+
+	
+		
+	}*/
+//}
