@@ -1,12 +1,6 @@
 package day4;
 
 public class AssessMent1 {
-	package day1;
-
-	import org.junit.Assert;
-	import org.junit.Test;
-
-	public class TwoSum {
 		/*
 		 * 1) Did I understand the problem? Yes 
 		 * 		-> If yes, go to next step !!
