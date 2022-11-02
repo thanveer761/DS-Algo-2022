@@ -1,5 +1,7 @@
 package day2;
 
+import java.util.HashSet;
+
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -23,15 +25,23 @@ public class ArithmeticTriplets {
 		   }
 		  return count;*/
 	private int arithmeticTriplets(int[] nums, int diff) {
+		
+		 HashSet<Integer> hs=new HashSet<>();
+		int n = nums.length;
 		int count=0;
-		int left=0, right=nums.length-1;
-		while(left<right) {
-			if(nums[right]-nums[left]!=diff) {
-				left++;
+		int left=0, right=1;
+		while(right<n) {
+			hs.add(nums[left]);
+			if(nums[right]-nums[left]==diff) {
+				if(hs.contains(nums[left]-diff))
+				count++;
+				right++;
 			}
+			else if (nums[right]-nums[left]>diff) {
+				left++;
+			} 
 			else {
-				count+=right;
-				right--;
+				right++;
 				
 
 			}

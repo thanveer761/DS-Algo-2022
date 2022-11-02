@@ -43,29 +43,6 @@ public class AssessMent1 {
 		 * 
 		 */
 		
-
-		@Test
-		public void testCase1() {
-			int[] input = { 2, 4, 6, 8, 12, 5 };
-			int target = 10;
-			Assert.assertArrayEquals(twoSum(input, target), new int[] { 0, 3 });
-		}
-
-		@Test
-		public void testCase2() {
-			int[] input = { 2, 4, 6, 8, 12, 5 };
-			int target = 15;
-			Assert.assertArrayEquals(twoSum(input, target), new int[] { -1, -1 });
-		}
-
-		
-
-		@Test
-		public void testCase3() {
-			int[] input = {};
-			int target = 10;
-			Assert.assertArrayEquals(twoSum(input, target), new int[] {});
-		}
 	/*
 	 * 
 	 * use 2 for loops  by iterating
