@@ -62,7 +62,7 @@ public class FindContentChildren {
 		Assert.assertEquals(2, op);
 	}
 
-	public int findContentChild(int[] g, int[] s) {
+	/*public int findContentChild(int[] g, int[] s) {
 		Arrays.sort(g);
         Arrays.sort(s);
      for (int i = 0; i < g.length; i++) {
@@ -77,5 +77,15 @@ public class FindContentChildren {
 		
 	}
 	return 0;
-   }
+   }*/
+	public int findContentChild(int[] g, int[] s) {
+		Arrays.sort(g);
+        Arrays.sort(s);
+     int i = 0;
+for(int j=0;i<g.length && j<s.length;j++) {
+	if(g[i]<=s[j]) 
+		i++;
+}
+return i;
+	}
 }

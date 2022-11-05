@@ -87,8 +87,7 @@ public class RemoveElem {
 
 		for (int i = 0; i < nums.length; i++) {
 			if(nums[i]!=Val) {
-				nums[arr]=nums[i];
-				arr++;
+				nums[arr++]=nums[i];	
 			}
 		}
 

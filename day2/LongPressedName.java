@@ -68,13 +68,11 @@ public class LongPressedName {
 	}
 
 	/*
-	 * pseudocode: 
-	 * initialize i & j variables as 0
-	 * if name.length equal to  type length return true
-	 * if name.length greater than  type length return true
-	 *  if name.charArt[i] matches with  typed.charAt[j] increment i&j
-	 * if  typed.charAt[0] is not eqauls to  typed.charAt[1st] index return false;
-	 * if i == name.lenght return true 
+	 * pseudocode: initialize i & j variables as 0 if name.length equal to type
+	 * length return true if name.length greater than type length return true if
+	 * name.charArt[i] matches with typed.charAt[j] increment i&j if typed.charAt[0]
+	 * is not eqauls to typed.charAt[1st] index return false; if i == name.lenght
+	 * return true
 	 */
 	// bruteForce--> TC:-O[N]; sc:-O[1]
 	public boolean longPressedName(String name, String typed) {

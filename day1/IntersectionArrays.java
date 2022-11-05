@@ -2,7 +2,9 @@ package day1;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 import org.junit.Assert;
 import org.junit.Test;
@@ -61,11 +63,11 @@ public class IntersectionArrays {
 		Assert.assertEquals(arrIntersection(nums1, nums2), new ArrayList<Integer>(Arrays.asList(4, 9)));
 	}
 
-	private List<Integer> arrIntersection(int[] nums1, int[] nums2) {
+private List<Integer> arrIntersection(int[] nums1, int[] nums2) {
 		List<Integer> lst = new ArrayList<>();
 		for (int i = 0; i < nums1.length; i++) {
 			for (int j = 0; j < nums2.length; j++) {
-				if (nums1[j] == nums2[i]) {
+				if (nums1[i] == nums2[j]) {
 					if (!lst.contains(nums2[j])) {
 						lst.add(nums2[j]);
 					}
@@ -76,4 +78,30 @@ public class IntersectionArrays {
 
 		return lst;
 	}
+	
+	//TC:o[nlogn]
+	/*public int[] arrIntersection(int[] nums1, int[] nums2) {
+        Set<Integer> set = new HashSet<>();
+        Arrays.sort(nums1);
+        Arrays.sort(nums2);
+        int i = 0;
+        int j = 0;
+        while (i < nums1.length && j < nums2.length) {
+            if (nums1[i] < nums2[j]) {
+                i++;
+            } else if (nums1[i] > nums2[j]) {
+                j++;
+            } else {
+                set.add(nums1[i]);
+                i++;
+                j++;
+            }
+        }
+        int[] result = new int[set.size()];
+        int k = 0;
+        for (Integer num : set) {
+            result[k++] = num;
+        }
+        return result;
+    }*/
 }

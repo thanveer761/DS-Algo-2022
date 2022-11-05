@@ -7,7 +7,8 @@ public class FlipImage {
 	@Test
 	public void testCase1() {
 		int[] [] image= {{1,1,0},{1,0,1},{0,0,0}};
-		
+		int[][] flipImage = flipImage(image);
+		System.out.println(flipImage);
 Assert.assertArrayEquals(flipImage(image), new int[][]{{1,0,0},{0,1,0},{1,1,1}});
 		
 	}

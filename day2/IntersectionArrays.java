@@ -53,7 +53,7 @@ public class IntersectionArrays {
 	public void testCase1() {
 		int[] nums1 = {1,2,2,1};
 		int[] nums2 = {2,2};
-		Assert.assertArrayEquals(arrIntersection(nums1,nums2), new int[] {2});
+		Assert.assertArrayEquals(arrIntersection(nums1,nums2), new int[] {2,2});
 	}
 
 	@Test

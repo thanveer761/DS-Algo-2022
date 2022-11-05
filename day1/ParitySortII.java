@@ -85,7 +85,7 @@ public class ParitySortII {
 	 *  finally, return the array
 	 * 
 	 */
-	//bruteForce o[n^2]
+	//o[2N]
 	private int[] paritySort(int[] nums) {
 		int even=0;
 		int odd=1;
