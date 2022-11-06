@@ -29,7 +29,7 @@ public class LongestNiceSubString {
 					i++;
 					j++;
 				}else
-					op=;
+					
 			}
 		}
 		 
