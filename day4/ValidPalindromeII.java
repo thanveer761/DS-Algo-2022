@@ -37,7 +37,7 @@ public class ValidPalindromeII {
 	 */
 
 	// 2 pointer Approach-->Time Complexity=O[N], Space Complexity=o[1]
-	public boolean isPalindrome(String s, int i, int j) {
+	/*public boolean isPalindrome(String s, int i, int j) {
 		while (i < j) {
 			if (s.charAt(i) == s.charAt(j)) {
 				i++;
@@ -62,6 +62,38 @@ public class ValidPalindromeII {
 		}
 		return true;
 
+	}*/
+
+	public boolean validPalindromeII(String s) {
+		if (isPalindrome(s)) {
+			return true;
+		}
+		for (int i = 0; i < s.length(); i++) {
+			StringBuilder stringBuilder = new StringBuilder(s);
+			StringBuilder temp = stringBuilder.deleteCharAt(i);
+			String s1 = temp.toString();
+			if (isPalindrome(s1)){
+				return true;
+			}  
+		}
+		return false;
 	}
 
+	public boolean isPalindrome(String s) {
+		if (s.length() == 0) {
+			return true;
+		}
+		int left = 0;
+		int right = s.length() - 1;
+
+		while (left < right) {
+			if (s.charAt(left) == s.charAt(right)) {
+				left++;
+				right--;
+			} else {
+				return false;
+			}
+		}
+		return true;
+	}
 }

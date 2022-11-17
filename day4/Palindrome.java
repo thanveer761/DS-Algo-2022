@@ -70,7 +70,7 @@ public class Palindrome {
 				ch[left++] = temp;
 			}
 			if(s.equalsIgnoreCase(new String(ch))){
-				System.out.println("The Given String is not Palindrome");
+				System.out.println("The Given String is  Palindrome");
 			}
 				else {
 				System.out.println("The Given String is not Palindrome");

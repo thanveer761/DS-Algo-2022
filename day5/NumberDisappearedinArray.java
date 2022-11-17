@@ -28,8 +28,10 @@ Assert.assertEquals((findDisappearedNumbers), new int[] {2});
 		 List<Integer> lt=new ArrayList<Integer>();
 		 int[] store=new int[nums.length+1];
 
-		     for(int i=0;i<nums.length;i++)
-		         ++store[nums[i]];
+		     for(int i=0;i<nums.length;i++) {
+		    	 ++store[nums[i]];
+		     }
+		         
 		     
 		     for(int j=1;j<store.length;j++)
 		         if(store[j]==0)

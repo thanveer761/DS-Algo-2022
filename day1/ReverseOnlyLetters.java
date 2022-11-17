@@ -23,25 +23,9 @@ public class ReverseOnlyLetters {
 		Assert.assertEquals("Qedo1ct-eeLg=ntse-T!",op);
 	}
 
-	//BruteForce
-	public String revOnlyLetters(String s) {
-		String reversed="";
-        for(int i=s.length()-1;i>=0;i--){
-            reversed+=s.charAt(i);
-        }
-        return reversed;
-	}
-	}
-	
-	
-	
-	/*pseudocode:
-	 * 
-	 * 
-	 */
 
 	//2 pointers o[n^2]
-	/*public String revOnlyLetters(String s) {
+	public String revOnlyLetters(String s) {
 		char[] ch = s.toCharArray();
 	int	left=0,right=ch.length-1;
 	while(left<=right) {
@@ -60,4 +44,4 @@ public class ReverseOnlyLetters {
 		
 	
 }
-}*/
+}

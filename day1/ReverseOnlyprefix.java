@@ -18,14 +18,14 @@ public class ReverseOnlyprefix{
 		String op = reverseOnlyprefix(s, ch);
 		Assert.assertEquals("dcbaefd",op);
 	}
-	
+
 	/*pseudocode:
 	 * 
 	 * 
 	 */
 
-	//2 pointers o[n^2]
-	public String reverseOnlyprefix(String s,char ch) {
+	//Brute Force o[n^2]
+	/*public String reverseOnlyprefix(String s,char ch) {
 		 StringBuilder sb = new StringBuilder();
 	        int index = 0;
 	        for(int i = 0; i < s.length(); i++){
@@ -41,7 +41,25 @@ public class ReverseOnlyprefix{
 	            sb.append(s.charAt(i));
 	        }
 	        return sb.toString();
-	
-	
-}
+}*/
+
+	public String reverseOnlyprefix(String word, char ch) {
+		int left=0;
+		char[] temp=word.toCharArray();
+		for(int end=0;end<temp.length;end++)
+		{
+			if(temp[end]==ch)
+			{
+				while(left<end)
+				{
+					char tempS=temp[left];
+					temp[left++]=temp[end];
+					temp[end--]=tempS;
+					
+				}
+				break;
+			}
+		}
+		return new String(temp);
+	}
 }
