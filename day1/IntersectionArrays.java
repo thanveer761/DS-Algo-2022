@@ -62,7 +62,7 @@ public class IntersectionArrays {
 		int[] nums2 = { 9, 4, 9, 8, 4 };
 		Assert.assertEquals(arrIntersection(nums1, nums2), new ArrayList<Integer>(Arrays.asList(4, 9)));
 	}
-
+/*
 private List<Integer> arrIntersection(int[] nums1, int[] nums2) {
 		List<Integer> lst = new ArrayList<>();
 		for (int i = 0; i < nums1.length; i++) {
@@ -77,10 +77,10 @@ private List<Integer> arrIntersection(int[] nums1, int[] nums2) {
 		}
 
 		return lst;
-	}
+	}*/
 	
 	//TC:o[nlogn]
-	/*public int[] arrIntersection(int[] nums1, int[] nums2) {
+	public int[] arrIntersection(int[] nums1, int[] nums2) {
         Set<Integer> set = new HashSet<>();
         Arrays.sort(nums1);
         Arrays.sort(nums2);
@@ -103,5 +103,5 @@ private List<Integer> arrIntersection(int[] nums1, int[] nums2) {
             result[k++] = num;
         }
         return result;
-    }*/
+    }
 }

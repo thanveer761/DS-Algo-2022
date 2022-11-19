@@ -1,8 +1,9 @@
-package day2;
+package day1;
 
-import java.util.Arrays;
+import org.junit.Assert;
+import org.junit.Test;
 
-public class SortArrayWithoutBuiltIn {
+public class MergeStrings {
 	/*
 	 * 1) Did I understand the problem? Yes 
 	 * 		-> If yes, go to next step !!
@@ -45,33 +46,42 @@ public class SortArrayWithoutBuiltIn {
 	 * 
 	 */
 
-	/*
-	 * initilize a temp variable
-	 * traverse through the array by using nesteed for loop
-	 * compare if nums[j]>nums[i]
-	 * and by using temp variable swap i and j
-	 * finally return nums
-	 * 
-	 */
 
-	public static void main(String[] args) {
-		int temp;
-		int [] nums= {8,5,4,2,1};
-		for (int i = 0; i < nums.length; i++) {
-			for (int j = i+1; j < nums.length; j++) {
-				if(nums[i]>nums[j]) {
-					temp=nums[j];
-					nums[j]=nums[i];
-					nums[i]=temp;
-
-				}
-
-
-			}
-
-		}
-		System.out.println(Arrays.toString(nums));
-
+	@Test
+	public void testCase1() {
+		String word1="abc", word2="pqr";
+		Assert.assertEquals(mergeString(word1, word2),"apbqcr");
 	}
 
-}
+	@Test
+	public void testCase2() {
+		String word1="ab", word2="pqrs";
+		Assert.assertEquals(mergeString(word1, word2),"apbqrs");
+	}
+	
+	
+	/*pseudocode:
+	 * declare an empty string variable
+	 * intialze 2 variables as 0
+	 * iterate throught word1 & word2
+	 * if i is less than word1lenth & word2lenth append each character
+	 * reurn op
+	 * 
+	 */
+	//bruteForce--> TC:-O[N];	sc:-O[1]
+	public String mergeString(String word1,String word2) {
+		 String  op ="";
+	        int a =0,b=0;
+	        for(int i=0;i<word1.length()+word2.length();i++){       
+	            if(i<word1.length()){
+	                op+=word1.charAt(a);
+	                a++;
+	            }
+	            if(i<word2.length()){
+	                op +=word2.charAt(b);
+	                b++;
+	            }
+	        }   
+	    return op;
+	    
+}}

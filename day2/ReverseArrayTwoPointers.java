@@ -66,6 +66,7 @@ public class ReverseArrayTwoPointers {
 		int[] input = {1,1,1,1};
 		Assert.assertArrayEquals(twoSum(input), new int[] {1,1,1,1});
 	}
+
 	/*
 	 * 2 pointers:
 	 * declare left from 0 and right from last inded

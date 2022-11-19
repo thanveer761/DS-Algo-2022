@@ -48,18 +48,7 @@ public class ParitySort {
 	 * 10) If it fails, debug them to solve it !!
 	 * 
 	 */
-	@Test
-	public void testCase1() {
-		int[] input = {3,1,2,4};
-
-		Assert.assertArrayEquals(paritySort(input), new int[] {2,4,3,1 });
-	}
-
-@Test
-	public void testCase2() {
-		int[] input = {0};
-		Assert.assertArrayEquals(paritySort(input), new int[] {0});
-	}
+	  
 @Test
 public void testCase3() {
 	int[] input = {};
