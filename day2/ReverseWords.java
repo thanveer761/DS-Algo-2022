@@ -50,8 +50,11 @@ public class ReverseWords {
 	@Test
 	public void testCase1() {
 		String s="Let's take LeetCode contest";
-		String op = revWords(s);
-		Assert.assertEquals("s'teL ekat edoCteeL tsetnoc",op);
+		String op1 = revWords1(s);
+		String op2 = revWords2(s);
+		System.out.println(op2);
+		Assert.assertEquals("s'teL ekat edoCteeL tsetnoc",op1);
+	Assert.assertEquals("s'teL ekat edoCteeL tsetnoc",op2);
 	}
 
 
@@ -62,13 +65,13 @@ public class ReverseWords {
 	 */
 
 	//2 pointers o[n^2]
-	public String revWords(String s) {
+	public String revWords1(String s) {
 		
 		String reverseChar = "";
 		for(int i= s.length()-1;i>=0;i--) {
 			reverseChar+=s.charAt(i);
 		}
-		System.out.println(reverseChar);
+	//	System.out.println(reverseChar);
 		String words[] = reverseChar.split("\\s");
 	    String reversedString = "";
 	 
@@ -81,9 +84,17 @@ public class ReverseWords {
 	        } 
 	 
 	    // Displaying the string after reverse
-	    System.out.println("Reversed string : " + reversedString);
+	//    System.out.println("Reversed string : " + reversedString);
 		return reversedString;
 		
 	
+}
+	public String revWords2(String s) {
+	  String[] words = s.split("\\s");
+      
+      for (int i = 0; i < words.length; i++) {
+          words[i] = new StringBuilder(words[i]).reverse().toString();
+      }
+      return String.join(" ", words);
 }
 }

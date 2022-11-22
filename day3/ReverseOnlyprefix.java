@@ -43,23 +43,23 @@ public class ReverseOnlyprefix{
 	        return sb.toString();
 }*/
 
-	public String reverseOnlyprefix(String word, char ch) {
+	public String reverseOnlyprefix(String word, char c) {
 		int left=0;
-		char[] temp=word.toCharArray();
-		for(int end=0;end<temp.length;end++)
+		char[] ch=word.toCharArray();
+		for(int right=0;right<ch.length;right++)
 		{
-			if(temp[end]==ch)
+			if(ch[right]==c)
 			{
-				while(left<end)
+				while(left<right)
 				{
-					char tempS=temp[left];
-					temp[left++]=temp[end];
-					temp[end--]=tempS;
+					char temp=ch[left];
+					ch[left++]=ch[right];
+					ch[right--]=temp;
 					
 				}
 				break;
 			}
 		}
-		return new String(temp);
+		return new String(ch);
 	}
 }
