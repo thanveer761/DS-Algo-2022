@@ -70,6 +70,7 @@ public class ValidPalindromeII {
 		}
 		for (int i = 0; i < s.length(); i++) {
 			StringBuilder stringBuilder = new StringBuilder(s);
+
 			StringBuilder temp = stringBuilder.deleteCharAt(i);
 			String s1 = temp.toString();
 			if (isPalindrome(s1)){

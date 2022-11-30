@@ -7,18 +7,18 @@ public class Assessment_SumOfTwoNumbers {
 
 	    @Test
 	    public void td1(){
-	        Assert.assertEquals(getNoZeroIntegers(2), new int[]{1,1});
+	        Assert.assertArrayEquals(getNoZeroIntegers(2), new int[]{1,1});
 	    }
 
 	    @Test
 	    public void td2(){
-	        Assert.assertEquals(getNoZeroIntegers(11), new int[]{2,9});
+	        Assert.assertArrayEquals(getNoZeroIntegers(11), new int[]{2,9});
 	    }
 
 
 	    @Test
 	    public void td3(){
-	        Assert.assertEquals(getNoZeroIntegers(1102), new int[]{111,991});
+	        Assert.assertArrayEquals(getNoZeroIntegers(1102), new int[]{111,991});
 	    }    
 
 	  /*  Pseudocode
