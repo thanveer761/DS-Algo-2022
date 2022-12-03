@@ -1,5 +1,9 @@
 package day1;
 
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.Map;
+
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -45,23 +49,26 @@ public class TwoSum {
 	 * 10) If it fails, debug them to solve it !!
 	 * 
 	 */
-	
+
 
 	@Test
 	public void testCase1() {
-		int[] input = { 2, 4, 6, 8, 12, 5 };
-		int target = 10;
-		Assert.assertArrayEquals(twoSum(input, target), new int[] { 0, 3 });
+		int[] input = { 2,7,11,15};
+		int target = 9;
+		int[] twoSum = twoSum(input, target);
+		System.out.println(Arrays.toString(twoSum));
+	//	Assert.assertArrayEquals(twoSum(input, target), new int[] { 0, 3 });
+
 	}
 
 	@Test
 	public void testCase2() {
 		int[] input = { 2, 4, 6, 8, 12, 5 };
-		int target = 15;
-		Assert.assertArrayEquals(twoSum(input, target), new int[] { -1, -1 });
+		int target = 14;
+		Assert.assertArrayEquals(twoSum(input, target), new int[] { 0, 3});
 	}
 
-	
+
 
 	@Test
 	public void testCase3() {
@@ -69,29 +76,39 @@ public class TwoSum {
 		int target = 10;
 		Assert.assertArrayEquals(twoSum(input, target), new int[] {});
 	}
-/*
- * 
- * use 2 for loops  by iterating
- * compare the added elem with target 
- * if matches return its index 
- * else throw an exception or -1,-1
- * or the nums of array is less than 2 return empty array
- * 
- */
-	
+	/*
+	 * 
+	 * use 2 for loops  by iterating
+	 * compare the added elem with target 
+	 * if matches return its index 
+	 * else throw an exception or -1,-1
+	 * or the nums of array is less than 2 return empty array
+	 * 
+	 */
+
 	//bruteForce o[n^2]
-	private int[] twoSum(int[] nums, int target) {
+	/*private int[] twoSum(int[] nums, int target) {
 		if(nums.length<=2) {
 			return new int[]{};
 		}
 		for (int i = 0; i < nums.length; i++) {
-			for (int j = i+1; j < nums.length; j++) {
+			for (int j = i+1; j < nums.length-1; j++) {
 				if(nums[i]+nums[j]==target) {
 				return new int[] {i,j};	
 			}
 		}
 		}
 		return new int[] {-1,-1};
-}
-	
-}
+}*/
+	public int[] twoSum(int[] nums, int target) {
+		 Map<Integer, Integer> hm = new HashMap<>();
+	        for(int i = 0; i < nums.length;i++) {
+	            if(hm.containsKey(target - nums[i])) {
+	                return new int[] {hm.get(target - nums[i]), i};
+	            } else {
+	                hm.put(nums[i], i);
+	            }
+	        }
+	        return null;
+		
+	}}
