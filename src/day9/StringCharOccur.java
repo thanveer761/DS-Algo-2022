@@ -33,6 +33,7 @@ public class StringCharOccur {
 	@Test
 	public void td4() {
 		String m = "aabbaa";
+		//output===>3
 		String op = stringocc1(m);
 		System.out.println(op);
 
@@ -41,6 +42,7 @@ public class StringCharOccur {
 	@Test
 	public void td5() {
 		String m = "aaabbbccaaad";
+		//output==>4
 		String op = stringocc1(m);
 		System.out.println(op);
 
@@ -53,8 +55,10 @@ public class StringCharOccur {
 		System.out.println(op);
 
 	}
+	
 
 	public String stringocc1(String m) {
+		
 		StringBuilder sb = new StringBuilder();
 		int start = 0, end = 0, count = 0;
 		while (end < m.length()) {
