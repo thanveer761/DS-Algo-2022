@@ -1,7 +1,13 @@
 package day11;
 
 
-
+/*
+ * declare an array size of 256
+ * traverse through each char array
+ * Create an array of given String size
+ * traverse through if any matches found increment the index
+ * if found print the occurences.
+ */
 public class occurenceOfCharacterWithoutHashMap {
 	   public static void main(String[] args) {
 		   String str = "thanveer";
