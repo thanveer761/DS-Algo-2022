@@ -1,8 +1,8 @@
-package day1;
+package sorting;
 
 import java.util.Arrays;
 
-public class SortArrayWithoutBuiltIn {
+public class BubbleSort {
 	/*
 	 * 1) Did I understand the problem? Yes 
 	 * 		-> If yes, go to next step !!

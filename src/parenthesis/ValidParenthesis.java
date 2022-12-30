@@ -1,4 +1,4 @@
-package day8;
+package parenthesis;
 
 import java.util.Stack;
 
@@ -36,11 +36,5 @@ public class ValidParenthesis {
 			}
 		}
 		return st.empty();
-	}
-	public boolean isValidUsingMap(String s) {
-		
-		
-		return false;
-		
 	}
 }

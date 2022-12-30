@@ -1,8 +1,8 @@
-package day10;
+package anagramAndFibonicci;
 
 import org.junit.Test;
 
-public class Fibonacci {
+public class Fibonaccii {
 	@Test
 	public void testCase1() {
 		int n=3;

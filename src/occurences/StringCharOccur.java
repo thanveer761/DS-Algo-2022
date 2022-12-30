@@ -1,6 +1,6 @@
 
 
-package day9;
+package occurences;
 
 import org.junit.Test;
 

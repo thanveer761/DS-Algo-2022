@@ -1,9 +1,9 @@
-package day2;
+package reverse;
 
 import org.junit.Assert;
 import org.junit.Test;
 
-public class ReverseWords {
+public class ReverseArrayTwoPointers {
 	/*
 	 * 1) Did I understand the problem? Yes 
 	 * 		-> If yes, go to next step !!
@@ -49,52 +49,44 @@ public class ReverseWords {
 
 	@Test
 	public void testCase1() {
-		String s="Let's take LeetCode contest";
-		String op1 = revWords1(s);
-		String op2 = revWords2(s);
-		System.out.println(op2);
-		Assert.assertEquals("s'teL ekat edoCteeL tsetnoc",op1);
-	Assert.assertEquals("s'teL ekat edoCteeL tsetnoc",op2);
+		int[] input = { 2, 4, 6, 8, 12, 5 };
+		Assert.assertArrayEquals(twoSum(input), new int[] {5,12,8,6,4,2});
+	}
+
+	@Test
+	public void testCase2() {
+		int[] input = {1};
+		Assert.assertArrayEquals(twoSum(input), new int[] {1});
 	}
 
 
 
+	@Test
+	public void testCase3() {
+		int[] input = {1,1,1,1};
+		Assert.assertArrayEquals(twoSum(input), new int[] {1,1,1,1});
+	}
+
 	/*
 	 * 2 pointers:
+	 * declare left from 0 and right from last inded
+	 * traverse through the array
+	 * declare an temp variable 
+	 * nums[left]!=nums[right]
 	 * 
 	 */
 
 	//2 pointers o[n^2]
-	public String revWords1(String s) {
-		
-		String reverseChar = "";
-		for(int i= s.length()-1;i>=0;i--) {
-			reverseChar+=s.charAt(i);
+	private int[] twoSum(int[] nums) {
+		int left=0, right=nums.length-1;
+		while(left<right) {
+			int temp =nums[left];
+			nums[left++]=nums[right];
+			nums[right--]=temp;
+
 		}
-	//	System.out.println(reverseChar);
-		String words[] = reverseChar.split("\\s");
-	    String reversedString = "";
-	 
-	    //Reverse each word's position
-	    for (int i = 0; i < words.length; i++) { 
-	            if (i == words.length - 1) 
-	              reversedString = words[i] + reversedString; 
-	            else
-	              reversedString = " " + words[i] + reversedString; 
-	        } 
-	 
-	    // Displaying the string after reverse
-	//    System.out.println("Reversed string : " + reversedString);
-		return reversedString;
 		
-	
-}
-	public String revWords2(String s) {
-	  String[] words = s.split("\\s");
-      
-      for (int i = 0; i < words.length; i++) {
-          words[i] = new StringBuilder(words[i]).reverse().toString();
-      }
-      return String.join(" ", words);
-}
+		return nums;
+
+	}
 }
