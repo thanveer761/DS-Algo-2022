@@ -1,4 +1,4 @@
-package day6;
+package commonAndUncommonWords;
 
 import java.util.ArrayList;
 import java.util.HashMap;

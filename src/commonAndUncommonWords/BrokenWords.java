@@ -1,4 +1,4 @@
-package day7;
+package commonAndUncommonWords;
 
 import java.util.HashSet;
 import java.util.Set;
