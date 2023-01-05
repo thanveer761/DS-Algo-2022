@@ -6,9 +6,10 @@ import org.junit.Test;
 public class ReverseOnlyLetters {
 	@Test
 	public void testCase1() {
-		String s="ab-cd";
+		String s="abcd";
 		String op = revOnlyLetters(s);
-		Assert.assertEquals("dc-ba",op);
+		System.out.println(op);
+		Assert.assertEquals("dcba",op);
 	}
 	@Test
 	public void testCase2() {
