@@ -33,7 +33,7 @@ public void occurencesOfWords(String a) {
             freqMap.put(key, ++freq);
         }
         for (Entry<String, Integer> result : freqMap.entrySet()) {
-            System.out.println(result.getKey() + " " + result.getValue());
+            System.out.println(result.getKey() + "-" + result.getValue());
         }
         if(a.isEmpty()) {
     		System.out.println("the given string is empty");

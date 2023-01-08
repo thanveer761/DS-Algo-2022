@@ -16,12 +16,11 @@ public class CountDupsGroup {
 	public void td3() {
 		String m = "aaabbbccaaad";
 		//op==>4
-		int op = stringocc2(m);
+		int op = stringocc0(m);
 		System.out.println(op);
-		//int op = stringocc1(m);
-		//	System.out.println(op);
-		//int op1 = stringocc2(m);
-		//System.out.println(op1);
+		int op1 = stringocc1(m);
+			System.out.println(op1);
+		
 
 	}
 	public int stringocc0(String m) {
@@ -50,25 +49,7 @@ public class CountDupsGroup {
 			count++; 
 		}
 		return count;
-	}
-
-	public int stringocc2(String m) {
-		int count=0;
-		Map<Character,Integer> hm = new HashMap<>();
-		for (int i = 0; i < m.length(); i++) {
-			hm.put(m.charAt(i), hm.getOrDefault(m.charAt(i), 0)+1);
-		}
-		//System.out.println(hm);
-		Set<Entry<Character, Integer>> entrySet = hm.entrySet();
-		for (Entry<Character, Integer> entry : entrySet) {
-			if(entry.getValue()>1) {
-				count+=entry.setValue(1
-						);
-			}
-		}
-		return count;
-
-
+	
 	}
 
 }
