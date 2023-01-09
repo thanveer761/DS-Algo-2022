@@ -72,28 +72,39 @@ public class ReturnSumofK {
 	 * 
 	 */
 //BruteForce
+	/*
+	 * private int returnSumofK(int[] nums, int k) {
+	 * 
+	 * for (int i = 0; i < nums.length; i++) { for (int j = i+1; j < nums.length;
+	 * j++) { for (int k1 = j+1; k1 < nums.length; k1++) {
+	 * 
+	 * int max=nums[i]+nums[j]+nums[k1]; System.out.println(max); } }
+	 * 
+	 * }
+	 * 
+	 * return k;
+	 * 
+	 * }
+	 */
+
+	// 2 pointers o[n^2]
 	private int returnSumofK(int[] nums, int k) {
-	
-		for (int i = 0; i < nums.length; i++) {
-			for (int j = i+1; j < nums.length; j++) {
-				for (int k1 = j+1; k1 < nums.length; k1++) {
-					
-					int max=nums[i]+nums[j]+nums[k1];
-					System.out.println(max);
-				}
-				}
-				
-			}
+		if(nums.length<=1) {
+			return 0;
+		}
 		
-		return k;
-		
+		int maxSum = Integer.MIN_VALUE;
+
+		int currentSum = 0;
+		for (int i = 0; i < k; i++) {
+			currentSum += nums[i];
+		}
+		maxSum = Math.max(maxSum, currentSum);
+		for (int i = 1; i < nums.length - k; i++) {
+			currentSum += nums[i + k - 1] - nums[i - 1];
+			maxSum = Math.max(maxSum, currentSum);
+		}
+		return maxSum;
 	}
 
-	/*
-	 * // 2 pointers o[n^2] private int returnSumofK(int[] nums, int k) { int maxSum
-	 * = Integer.MIN_VALUE; int currentSum = 0; for(int i=0; i<k; i++) { currentSum
-	 * +=nums[i]; } maxSum = Math.max(maxSum, currentSum); for (int i = 1; i <
-	 * nums.length-k; i++) { currentSum +=nums[i+k-1]-nums[i-1]; maxSum =
-	 * Math.max(maxSum, currentSum); } return maxSum; }
-	 */
 }
